@@ -11,7 +11,7 @@ const Page = () => (
     <div className="flex">
       <Sidebar />
       <Body />
-      <Parameters/>
+      {/* <Parameters/> */}
     </div>
   </div>
 );

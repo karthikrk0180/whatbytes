@@ -15,7 +15,7 @@ const Header = () => {
       <div className="logo size-64 items-center">
         <MyLogo />
       </div>
-      <div className="account flex border-2 border-slate-300 rounded-md p-3  justify-center items-center ">
+      <div className="account flex border-2 border-slate-200 rounded-md p-3  justify-center items-center ">
         <img src={user.image} className="w-12 h-12 rounded-full p-1" />
         <text className="name px-1 font-bold text-xl">{user.name} </text>
       </div>

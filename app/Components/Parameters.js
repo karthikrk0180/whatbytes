@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import LinearProgress from "@mui/joy/LinearProgress";
 import Typography from "@mui/joy/Typography";
 import CircularProgress from "@mui/joy/CircularProgress";
 import Stack from "@mui/joy/Stack";
 
-const Parameters = () => {
-  const progressValue = 75; // Change this value to set the circular progress (0 to 100)
+const Parameters = ({ scores }) => {
+  const { correctAns } = scores;
 
-  // Set static values for each category
+  const marks = correctAns;
+
   const progressData = [
     { label: "HTML Tools, Forms, History", value: 43 },
     { label: "Tags & References in HTML", value: 60 },
@@ -15,12 +16,12 @@ const Parameters = () => {
     { label: "Tables & CSS Basics", value: 96 },
   ];
 
-  // Function to determine color based on value
+
   const getColor = (value) => {
-    if (value >= 80 && value <= 100) return "success"; // green
-    if (value >= 60 && value <= 79) return "neutral"; // orange
-    if (value >= 40 && value <= 59) return "primary"; // blue (use 'primary' as blue)
-    return "danger"; // red
+    if (value >= 80 && value <= 100) return "success";
+    if (value >= 60 && value <= 79) return "neutral"; 
+    if (value >= 40 && value <= 59) return "primary"; 
+    return "danger"; 
   };
 
   return (
@@ -62,16 +63,16 @@ const Parameters = () => {
       <div className="bg-white border-2 border-gray-200 rounded-lg w-[100%] text-black text-wrap">
         <div className="flex justify-between px-5 py-4">
           <div className="text-xl font-bold">Question Analysis</div>
-          <div className="text-xl font-bold">10/15</div>
+          <div className="text-xl font-bold">{marks}/15</div>
         </div>
 
         <div className="text-wrap px-5">
-          You scored 10 questions correct out of 15.
+          You scored {marks} questions correct out of 15.
           <br />
           However, it still needs improvements.
         </div>
 
-        <div>
+        <div className="p-5">
           <Stack
             direction="row"
             spacing={8}
@@ -90,10 +91,10 @@ const Parameters = () => {
                 }}
                 size="lg"
                 determinate
-                value={progressValue}
+                value={((marks / 15) * 100).toFixed(2)}
                 color="primary"
               >
-                <Typography>{progressValue}%</Typography>
+                <Typography>{((marks / 15) * 100).toFixed(2)}%</Typography>
               </CircularProgress>
             </Stack>
           </Stack>

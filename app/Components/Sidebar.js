@@ -10,7 +10,7 @@ const Sidebar = () => {
         <BiSolidDashboard className="mr-3" />
         Dashboard
       </div>
-      <div className="flex items-center font-bold text-2xl text-slate-800 bg-white justify-start p-5 rounded-3xl m-1 hover:bg-gray-200 transition-colors duration-200">
+      <div className="flex items-center font-bold text-2xl text-slate-800 justify-start p-5 rounded-3xl m-1 bg-gray-200 transition-colors duration-200">
         <TfiMedallAlt className="mr-3" />
         Skill Test
       </div>
