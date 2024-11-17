@@ -7,3 +7,34 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+body, html {
+  margin: -2px;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+.container {
+  width: 100%; /* Ensures the main container spans full width */
+  margin: 0 auto; /* Centers the container */
+}
+
+
+@media (max-width: 860px) {
+  .container {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .button, .stat-item {
+    width: 100%; /* Ensure full width for items */
+  }
+
+  .chart-container {
+    width: 100%; /* Make sure the chart fits within the screen */
+    overflow-x: auto;
+  }
+}

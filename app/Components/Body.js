@@ -13,7 +13,6 @@ const data = {
   dateSubmitted: "2024-11-15T10:30:00Z",
 };
 
-
 const formatDate = (dateString) => {
   const dateObj = new Date(dateString);
   return dateObj.toLocaleDateString("en-GB", {
@@ -32,17 +31,16 @@ const Body = () => {
 
   const [showModal, setShowModal] = useState(false);
 
-  
   const updateScores = (newScores) => {
     setScores(newScores);
-    setShowModal(false); 
+    setShowModal(false);
   };
 
   const chartData = {
-    xAxis: [{ data: [0, 25, 50, 75, 100] }], 
+    xAxis: [{ data: [0, 25, 50, 75, 100] }],
     series: [
       {
-        data: [0, 20, 50, 50, 20], 
+        data: [0, 20, 50, 50, 20],
       },
     ],
   };
@@ -59,11 +57,13 @@ const Body = () => {
     },
   ];
   return (
-    <div className="flex">
+    <div className="lg:flex">
       <div className="p-5 ">
         <div className="font-bold text-black  text-lg  w-full ">Skill Test</div>
 
         <div>
+
+          
           <div className="bg-white border-slate-200 rounded-lg flex p-5 border-2 items-center mt-5">
             <div>
               <img className="size-24" src={data.skillImg} />
@@ -142,16 +142,18 @@ const Body = () => {
             <div>
               <LineChart
                 xAxis={chartData.xAxis}
-                series={updatedSeries} 
+                series={updatedSeries}
                 width={750}
                 height={300}
               />
             </div>
           </div>
+
+
         </div>
       </div>
       <div>
-      <Parameters scores={scores} updateScores={updateScores} />
+        <Parameters scores={scores} updateScores={updateScores} />
       </div>
     </div>
   );
